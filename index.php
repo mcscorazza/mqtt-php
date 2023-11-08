@@ -6,15 +6,14 @@ $server = '53e69abd7b384d66a432943bf26f295f.s2.eu.hivemq.cloud';     // change i
 $port = 8883;                     // change if necessary
 $username = 'gb_digital';                   // set your username
 $password = 'Gbds9159';                   // set your password
-$client_id = 'GBpub'; // make sure this is unique for connecting to sever - you could use uniqid()
 
-echo "Iniciando MQTT...<br></br>";
+echo "Iniciando MQTT . . . <br></br>";
 
-$mqtt = new Bluerhinos\phpMQTT($server, $port, $client_id);
+$mqtt = new Bluerhinos\phpMQTT($server, $port);
 
-echo "Iniciando...</br>";
+echo "Iniciando . . . </br>";
 
-echo "Verificando se está conectado... ";
+echo "Verificando se está conectado . . . ";
 
 if(!$mqtt->connect(true, NULL, $username, $password)) {
 	echo "Erro de conexão!";
