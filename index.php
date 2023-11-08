@@ -16,18 +16,4 @@ if(!$mqtt->connect(true, NULL, $username, $password)) {
 }
 
 $mqtt->debug = true;
-
-$topics['teste/teste'] = array('qos' => 0, 'function' => 'procMsg');
-$mqtt->subscribe($topics, 0);
-
-while($mqtt->proc()) {
-    echo ".";
-}
-
-$mqtt->close();
-
-function procMsg($topic, $msg){
-    echo 'Msg Recieved: ' . date('r') . "\n";
-    echo "Topic: {$topic}\n\n";
-    echo "\t$msg\n\n";
-}
+$mqtt->subscribeAndWaitForMessage('teste/teste', 0);
