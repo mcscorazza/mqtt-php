@@ -7,15 +7,15 @@ $port = 8883;                     // change if necessary
 $username = 'gbdigital';                   // set your username
 $password = '##Gbds9159##';                   // set your password
 $client_id = 'phpMQTT-publisher'; // make sure this is unique for connecting to sever - you could use uniqid()
-//$cafile = 'isrgrootx1.pem'; // HiveMQ Cloud CA
+$cafile = 'isrgrootx1.pem'; // HiveMQ Cloud CA
 
 $mqtt = new Bluerhinos\phpMQTT($server, $port, $client_id, $cafile);
 
 echo "Iniciando...</br>";
 
 if(!$mqtt->connect(true, NULL, $username, $password)) {
-	exit(1);
-    echo "Erro de conexão!";
+	echo "Erro de conexão!";
+    exit(1);
 }
 
 $mqtt->debug = true;
