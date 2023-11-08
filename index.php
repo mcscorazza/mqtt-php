@@ -6,10 +6,11 @@ $server = '53e69abd7b384d66a432943bf26f295f.s2.eu.hivemq.cloud';     // change i
 $port = 8883;                     // change if necessary
 $username = 'gb_digital';                   // set your username
 $password = 'Gbds9159';                   // set your password
+$cliente_id = '';
 
 echo "Iniciando MQTT . . . <br></br>";
 
-$mqtt = new Bluerhinos\phpMQTT($server, $port);
+$mqtt = new Bluerhinos\phpMQTT($server, $port, $cliente_id);
 
 echo "Iniciando . . . </br>";
 
