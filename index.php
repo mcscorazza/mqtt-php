@@ -13,10 +13,14 @@ $mqtt = new Bluerhinos\phpMQTT($server, $port, $client_id, $cafile);
 
 echo "Iniciando...</br>";
 
+echo "Verificando se está conectado... ";
+
 if(!$mqtt->connect(true, NULL, $username, $password)) {
 	echo "Erro de conexão!";
     exit(1);
 }
+
+echo "OK!<br><br>";
 
 $mqtt->debug = true;
 $topics['teste/teste'] = array('qos' => 1, 'function' => 'procMsg');
