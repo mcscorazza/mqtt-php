@@ -21,7 +21,7 @@ $topics['teste/teste'] = array('qos' => 0, 'function' => 'procMsg');
 $mqtt->subscribe($topics, 0);
 
 while($mqtt->proc()) {
-
+    echo ".";
 }
 
 $mqtt->close();
