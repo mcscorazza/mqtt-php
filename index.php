@@ -11,8 +11,11 @@ $client_id = 'phpMQTT-publisher'; // make sure this is unique for connecting to 
 
 $mqtt = new Bluerhinos\phpMQTT($server, $port, $client_id, $cafile);
 
+echo "Iniciando...</br>";
+
 if(!$mqtt->connect(true, NULL, $username, $password)) {
 	exit(1);
+    echo "Erro de conexão!";
 }
 
 $mqtt->debug = true;
