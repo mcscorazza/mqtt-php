@@ -19,8 +19,8 @@ if(!$mqtt->connect(true, NULL, $username, $password)) {
 }
 
 $mqtt->debug = true;
-$topics['teste/teste'] = array('qos' => 0, 'function' => 'procMsg');
-$mqtt->subscribe($topics, 0);
+$topics['teste/teste'] = array('qos' => 1, 'function' => 'procMsg');
+$mqtt->subscribe($topics, 1);
 
 while($mqtt->proc()) {
 
